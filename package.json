@@ -7,7 +7,7 @@
   "devDependencies": {
     "@nx/js": "16.10.0",
     "@nx/workspace": "16.10.0",
-    "@nxrocks/nx-spring-boot": "^8.1.0",
+    "@nxrocks/nx-spring-boot": "^9.0.0",
     "nx": "16.10.0",
     "nx-cloud": "latest"
   }

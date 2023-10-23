@@ -1,61 +1,61 @@
 {
-  "name": "core",
-  "$schema": "../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "core/src",
+  "name": "framework-ddd",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "framework/ddd/src",
   "projectType": "library",
   "targets": {
     "build": {
       "executor": "@nxrocks/nx-spring-boot:build",
       "options": {
-        "root": "./core"
+        "root": "./framework/ddd"
       },
       "dependsOn": [
         "^install"
       ],
       "outputs": [
-        "{workspaceRoot}/core/build"
+        "{workspaceRoot}/framework/ddd/build"
       ]
     },
     "install": {
       "executor": "@nxrocks/nx-spring-boot:install",
       "options": {
-        "root": "./core"
+        "root": "./framework/ddd"
       },
       "outputs": [
-        "{workspaceRoot}/core/build"
+        "{workspaceRoot}/framework/ddd/build"
       ]
     },
     "test": {
       "executor": "@nxrocks/nx-spring-boot:test",
       "options": {
-        "root": "./core"
+        "root": "./framework/ddd"
       },
       "outputs": [
-        "{workspaceRoot}/core/build"
+        "{workspaceRoot}/framework/ddd/build"
       ]
     },
     "clean": {
       "executor": "@nxrocks/nx-spring-boot:clean",
       "options": {
-        "root": "./core"
+        "root": "./framework/ddd"
       }
     },
     "format": {
       "executor": "@nxrocks/nx-spring-boot:format",
       "options": {
-        "root": "./core"
+        "root": "./framework/ddd"
       }
     },
     "apply-format": {
       "executor": "@nxrocks/nx-spring-boot:apply-format",
       "options": {
-        "root": "./core"
+        "root": "./framework/ddd"
       }
     },
     "check-format": {
       "executor": "@nxrocks/nx-spring-boot:check-format",
       "options": {
-        "root": "./core"
+        "root": "./framework/ddd"
       }
     }
   },

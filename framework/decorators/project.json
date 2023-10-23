@@ -1,0 +1,63 @@
+{
+  "name": "framework-decorators",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "framework/decorators/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nxrocks/nx-spring-boot:build",
+      "options": {
+        "root": "./framework/decorators"
+      },
+      "dependsOn": [
+        "^install"
+      ],
+      "outputs": [
+        "{workspaceRoot}/framework/decorators/build"
+      ]
+    },
+    "install": {
+      "executor": "@nxrocks/nx-spring-boot:install",
+      "options": {
+        "root": "./framework/decorators"
+      },
+      "outputs": [
+        "{workspaceRoot}/framework/decorators/build"
+      ]
+    },
+    "test": {
+      "executor": "@nxrocks/nx-spring-boot:test",
+      "options": {
+        "root": "./framework/decorators"
+      },
+      "outputs": [
+        "{workspaceRoot}/framework/decorators/build"
+      ]
+    },
+    "clean": {
+      "executor": "@nxrocks/nx-spring-boot:clean",
+      "options": {
+        "root": "./framework/decorators"
+      }
+    },
+    "format": {
+      "executor": "@nxrocks/nx-spring-boot:format",
+      "options": {
+        "root": "./framework/decorators"
+      }
+    },
+    "apply-format": {
+      "executor": "@nxrocks/nx-spring-boot:apply-format",
+      "options": {
+        "root": "./framework/decorators"
+      }
+    },
+    "check-format": {
+      "executor": "@nxrocks/nx-spring-boot:check-format",
+      "options": {
+        "root": "./framework/decorators"
+      }
+    }
+  },
+  "tags": []
+}

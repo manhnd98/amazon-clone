@@ -3,9 +3,9 @@ services:
 
   # Backing Services
 
-  engineer-postgres:
+  amazon-postgres:
     image: "postgres:14.4"
-    container_name: "engineer-postgres"
+    container_name: "amazon-postgres"
     ports:
       - 5432:5432
     environment:
@@ -13,4 +13,10 @@ services:
       - POSTGRES_PASSWORD=password
     volumes:
       - ./postgresql/init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - amazon
 
+networks:
+    amazon:
+        name: amazon
+        driver: bridge

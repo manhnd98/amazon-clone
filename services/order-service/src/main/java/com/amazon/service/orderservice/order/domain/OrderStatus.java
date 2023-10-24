@@ -1,2 +1,7 @@
-package com.amazon.service.orderservice.order.domain;public class OrderStatus {
+package com.amazon.service.orderservice.order.domain;
+
+public enum OrderStatus {
+  ACCEPTED,
+  REJECTED,
+  DISPATCHED,
 }

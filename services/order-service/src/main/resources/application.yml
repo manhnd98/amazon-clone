@@ -21,4 +21,4 @@ spring:
   flyway:
     user: ${spring.r2dbc.username}
     password: ${spring.r2dbc.password}
-    url: jdbc://postgresql://localhost:5432/amz_order
+    url: jdbc:postgresql://localhost:5432/amz_order

@@ -1,0 +1,90 @@
+{
+  "name": "services-gateway",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "services/gateway/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nxrocks/nx-spring-boot:build",
+      "options": {
+        "root": "./services/gateway"
+      },
+      "dependsOn": [
+        "^install"
+      ],
+      "outputs": [
+        "{workspaceRoot}/services/gateway/build"
+      ]
+    },
+    "install": {
+      "executor": "@nxrocks/nx-spring-boot:install",
+      "options": {
+        "root": "./services/gateway"
+      },
+      "outputs": [
+        "{workspaceRoot}/services/gateway/build"
+      ]
+    },
+    "test": {
+      "executor": "@nxrocks/nx-spring-boot:test",
+      "options": {
+        "root": "./services/gateway"
+      },
+      "outputs": [
+        "{workspaceRoot}/services/gateway/build"
+      ]
+    },
+    "clean": {
+      "executor": "@nxrocks/nx-spring-boot:clean",
+      "options": {
+        "root": "./services/gateway"
+      }
+    },
+    "format": {
+      "executor": "@nxrocks/nx-spring-boot:format",
+      "options": {
+        "root": "./services/gateway"
+      }
+    },
+    "apply-format": {
+      "executor": "@nxrocks/nx-spring-boot:apply-format",
+      "options": {
+        "root": "./services/gateway"
+      }
+    },
+    "check-format": {
+      "executor": "@nxrocks/nx-spring-boot:check-format",
+      "options": {
+        "root": "./services/gateway"
+      }
+    },
+    "run": {
+      "executor": "@nxrocks/nx-spring-boot:run",
+      "options": {
+        "root": "./services/gateway"
+      }
+    },
+    "serve": {
+      "executor": "@nxrocks/nx-spring-boot:serve",
+      "options": {
+        "root": "./services/gateway"
+      }
+    },
+    "build-image": {
+      "executor": "@nxrocks/nx-spring-boot:build-image",
+      "options": {
+        "root": "./services/gateway"
+      },
+      "outputs": [
+        "{workspaceRoot}/services/gateway/build"
+      ]
+    },
+    "build-info": {
+      "executor": "@nxrocks/nx-spring-boot:build-info",
+      "options": {
+        "root": "./services/gateway"
+      }
+    }
+  },
+  "tags": []
+}

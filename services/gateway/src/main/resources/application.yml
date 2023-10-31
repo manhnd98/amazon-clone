@@ -1,0 +1,61 @@
+server:
+  port: 9000
+  netty:
+    connection-timeout: 2s
+    idle-timeout: 15s
+  shutdown: graceful
+
+spring:
+  application:
+    name: gateway-service
+  lifecycle:
+    timeout-per-shutdown-phase: 15s
+  cloud:
+    gateway:
+      routes:
+        - id: order-service
+          uri: ${AMZ_ORDER_SERVICE_URI:http://localhost:9002}/orders
+          predicates:
+            - Path=/api/orders/**
+          filters:
+            - name: CircuitBreaker
+              args:
+                name: catalogCircuitBreaker
+                fallbackUri: forward:/fallback/orders
+      httpclient:
+        connect-timeout: 2000
+        response-timeout: 5s
+        pool:
+          type: elastic
+          max-idle-time: 15s
+          max-life-time: 60s
+      default-filters:
+        - name: Retry
+          args:
+            retries: 3
+            methods: GET
+            series: SERVER_ERROR
+            exceptions: java.io.IOException, java.util.concurrent.TimeoutException
+            backoff:
+              first-backoff: 50ms
+              max-backoff: 500ms
+              factor: 2
+              based-on-previous-value: false
+  config:
+    import: "optional:configserver:"
+
+resilience4j:
+  circuitbreaker:
+    configs:
+      default:
+        sliding-window-size: 20
+        permitted-number-of-calls-in-half-open-state: 5
+        failure-rate-threshold: 50
+        wait-duration-in-open-state: 15000
+  timelimiter:
+    configs:
+      default:
+        timeout-duration: 5s
+logging:
+  level:
+    io.github.resilience4j: DEBUG

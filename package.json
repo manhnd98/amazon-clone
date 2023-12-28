@@ -5,10 +5,10 @@
   "scripts": {},
   "private": true,
   "devDependencies": {
-    "@nx/js": "16.10.0",
-    "@nx/workspace": "16.10.0",
+    "@nx/js": "17.2.8",
+    "@nx/workspace": "17.2.8",
     "@nxrocks/nx-spring-boot": "^8.1.0",
-    "nx": "16.10.0",
+    "nx": "17.2.8",
     "nx-cloud": "latest"
   }
 }
